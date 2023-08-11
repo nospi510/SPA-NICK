@@ -1,0 +1,91 @@
+                                    +---------------------------------------+
+                                    |                                       |
+                                    |            Utilisateur                |
+                                    |                                       |
+                                    +---------------+-------------------+---+
+                                                    |                   |
+                          +-------------------------+  Se connecter    +------------------+
+                          |                         |                   |                  |
+                          |                         v                   v                  v
++---------------------+   |               +------------------------+    +------------------------+    +-------------------------+
+|                     |   |               |                        |    |                        |    |                         |
+|   Administrateur    +---------------->  Gestionnaire          +--->|   Utilisateur Standard  |    |   Se connecter           |
+|                     |   |               |                        |    |                        |    |   Voir les tâches        |
++---------------------+   |               +------------------------+    |                        |    |   assignées             |
+                          |                                               |                        +--->|   Créer une tâche        |
+                          |                                               |                        |    |   pour soi               |
+                          |                                               |                        |    +-------------------------+
+                          |                                               +------------------------+
+                          |                                                          |
+                          v                                                          v
+               +---------------------+                                      +------------------+
+               |                     |                                      |                  |
+               |  Créer un utilisateur|                                      |  Afficher une tâche|
+               |                     |                                      |  assignée        |
+               +---------------------+                                      |                  |
+                                                                          +------------------+
+
+
+1. Diagramme de classes :
+
+Le diagramme de classes montre la structure des classes et leurs relations dans le système. Voici le diagramme de classes pour votre application :
+
+```
++------------------------+       +-------------------------+       +------------------+
+|   Utilisateur          |       |   Tâche                 |       |   Information    |
++------------------------+       +-------------------------+       +------------------+
+|                        |       |                         |       |                  |
+| - id: int              |       | - id: int               |       | - id: int        |
+| - nom: string          |       | - titre: string         |       | - titre: string  |
+| - email: string        |       | - description: string   |       | - contenu: string|
+| - motDePasse: string   |       | - dateCreation: date    |       | - datePublication:date |
+| - role: string         |       | - dateModification: date|       +------------------+
++------------------------+       | - utilisateurId: int   |
+                                 +-------------------------+
+                              
+```
+
+Dans ce diagramme, nous avons trois classes principales :
+- La classe "Utilisateur" représente les utilisateurs de l'application avec leurs attributs comme "id", "nom", "email", "motDePasse" et "role".
+- La classe "Tâche" représente les tâches avec les attributs "id", "titre", "description", "dateCreation", "dateModification" et "utilisateurId" qui est une clé étrangère liée à l'identifiant de l'utilisateur qui a créé la tâche.
+- La classe "Information" représente les informations publiées avec les attributs "id", "titre", "contenu" et "datePublication".
+
+Maintenant, passons au diagramme de séquence.
+
+2. Diagramme de séquence :
+
+Le diagramme de séquence montre l'interaction entre les acteurs (utilisateurs) et le système à travers une séquence chronologique d'appels de méthodes. Voici un exemple de diagramme de séquence pour la fonctionnalité "Créer une tâche pour soi-même" pour un Utilisateur Standard :
+
+```
+Utilisateur Standard                    Système
+        |                                     |
+        |   Se connecte                      |
+        |------------------------------------>|
+        |                                     |
+        |                                     |
+        |   Voir les tâches assignées         |
+        |------------------------------------>|
+        |                                     |
+        |                                     |
+        |   Créer une tâche pour soi-même     |
+        |------------------------------------>|
+        |                                     |
+        |                                     |
+        |                                     |   Enregistre la tâche
+        |                                     |<----------------------------------|
+        |                                     |
+        |   Afficher la confirmation          |
+        |<------------------------------------|
+        |                                     |
+```
+
+Ce diagramme de séquence montre les étapes suivantes :
+1. L'utilisateur Standard se connecte à l'application.
+2. L'utilisateur voit les tâches qui lui sont assignées.
+3. L'utilisateur crée une nouvelle tâche pour lui-même.
+4. Le système enregistre la tâche créée par l'utilisateur.
+5. Le système affiche une confirmation de la création de la tâche à l'utilisateur.
+
+Ce n'est qu'un exemple de diagramme de séquence, vous pouvez créer des diagrammes de séquence supplémentaires pour d'autres fonctionnalités et acteurs de l'application selon vos besoins.
+
+N'hésitez pas à ajuster ces diagrammes en fonction des spécificités de votre application et des interactions entre les acteurs et les fonctionnalités.

@@ -1,0 +1,42 @@
+/* style.css */
+.message-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px; /* Ajustez selon vos préférences */
+}
+
+.message {
+    display: flex;
+    margin: 10px;
+    max-width: 70%; /* Ajustez selon vos préférences */
+}
+
+.message-bubble {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timestamp {
+    color: #999;
+    font-size: 12px;
+}
+
+.unread {
+    font-weight: bold;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de gestion des tâches</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+        <h1>Plateforme de gestion des tâches</h1>
+        <h1>Connexion utilisateur</h1>
+
+        <div id="loginForm">
+            <form hx-post="index.php" hx-target="#content" method="post">
+
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Se connecter</button>
+
+            </form>
+
+            <p>Pas encore inscrit ? <a href="register.html" hx-get="register.html" hx-target="#content">Inscrivez-vous ici</a></p>
+        </div>
+    </div>
+    <script src="../sourcehtmx/htmx.min.js"></script>
+</body>
+</html>
